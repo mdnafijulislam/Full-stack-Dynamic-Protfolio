@@ -4,43 +4,61 @@
 
 @section('content')
 
-{{-- ================== Hero / About Section ================== --}}
-<div class="row align-items-center mb-5">
+{{-- ================== Hero Background Wrapper ================== --}}
+<div class="hero-bg p-5 rounded-3 mb-5">
 
-  <div class="col-md-4 text-center">
-    <img src="{{ asset('assets/images/' . $settings->photo) }}" 
-         alt="avatar" 
-         class="img-fluid rounded-circle" 
-         style="max-width:180px;">
-  </div>
+    {{-- Content wrapper (Step 2 added here) --}}
+    <div class="content">
 
-  <div class="col-md-8">
-    <h1>Hi, I'm <strong>{{ $settings->full_name }}</strong></h1>
-    <p class="lead">{{ $settings->about_text }}</p>
+        {{-- ================== Hero / About Section ================== --}}
+        <div class="row align-items-center">
 
-    {{-- Social Icons --}}
-    <div class="mt-3">
-      @if($settings->facebook)
-        <a href="{{ $settings->facebook }}" target="_blank" class="me-2"><i class="fab fa-facebook fa-lg"></i></a>
-      @endif
+            <div class="col-md-4 text-center">
+                <img src="{{ asset('assets/images/' . $settings->photo) }}" 
+                    alt="avatar" 
+                    class="img-fluid rounded-circle shadow-lg"
+                    style="max-width:180px;">
+            </div>
 
-      @if($settings->instagram)
-        <a href="{{ $settings->instagram }}" target="_blank" class="me-2"><i class="fab fa-instagram fa-lg"></i></a>
-      @endif
+            <div class="col-md-8 text-white">
+                <h1 class="fw-bold text-shadow">Hi, I'm <strong>{{ $settings->full_name }}</strong></h1>
+                <p class="lead text-shadow">{{ $settings->about_text }}</p>
 
-      @if($settings->github)
-        <a href="{{ $settings->github }}" target="_blank" class="me-2"><i class="fab fa-github fa-lg"></i></a>
-      @endif
+                {{-- Social Icons --}}
+                <div class="mt-3">
+                @if($settings->facebook)
+                    <a href="{{ $settings->facebook }}" target="_blank" class="me-3 social-icon">
+                        <i class="fab fa-facebook fa-lg"></i>
+                    </a>
+                @endif
 
-      @if($settings->linkedin)
-        <a href="{{ $settings->linkedin }}" target="_blank" class="me-2"><i class="fab fa-linkedin fa-lg"></i></a>
-      @endif
-    </div>
+                @if($settings->instagram)
+                    <a href="{{ $settings->instagram }}" target="_blank" class="me-3 social-icon">
+                        <i class="fab fa-instagram fa-lg"></i>
+                    </a>
+                @endif
 
-    <a href="#portfolio" class="btn btn-primary mt-3">See my work</a>
-  </div>
+                @if($settings->github)
+                    <a href="{{ $settings->github }}" target="_blank" class="me-3 social-icon">
+                        <i class="fab fa-github fa-lg"></i>
+                    </a>
+                @endif
 
-</div>
+                @if($settings->linkedin)
+                    <a href="{{ $settings->linkedin }}" target="_blank" class="me-3 social-icon">
+                        <i class="fab fa-linkedin fa-lg"></i>
+                    </a>
+                @endif
+                </div>
+
+                <a href="#portfolio" class="btn btn-light mt-3">See my work</a>
+            </div>
+
+        </div>
+        
+    </div> {{-- END .content --}}
+
+</div> {{-- END .hero-bg --}}
 
 
 
