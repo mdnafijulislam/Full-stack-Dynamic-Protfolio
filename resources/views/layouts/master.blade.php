@@ -5,22 +5,48 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>@yield('title', 'My Portfolio')</title>
 
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/your_kit_id.js" crossorigin="anonymous"></script>
+
+  <!-- Font Awesome (Working CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
+
 <body>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <a class="navbar-brand" href="{{ route('home') }}">MyPortfolio</a>
-    <div>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ route('portfolio') }}">Portfolio</a></li>
+    
+    <a class="navbar-brand fw-bold" href="{{ route('home') }}">MyPortfolio</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('home') }}">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('portfolio') }}">Portfolio</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+        </li>
+
       </ul>
     </div>
+
   </div>
 </nav>
+
 
 <main class="py-5">
   <div class="container">
@@ -28,13 +54,19 @@
   </div>
 </main>
 
-<footer class="bg-dark text-light py-4">
+
+<footer class="bg-dark text-light py-4 mt-5">
   <div class="container text-center">
-    &copy; {{ date('Y') }} MyPortfolio.
+    &copy; {{ date('Y') }} MyPortfolio. All Rights Reserved.
   </div>
 </footer>
 
+
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JS -->
 <script src="{{ asset('assets/js/main.js') }}"></script>
+
 </body>
 </html>

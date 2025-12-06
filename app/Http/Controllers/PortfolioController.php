@@ -1,20 +1,27 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Skill;
 use App\Models\Service;
 use App\Models\Portfolio;
+use App\Models\Setting;
 
 class PortfolioController extends Controller
 {
     public function home()
     {
-        $skills = Skill::orderBy('percentage','desc')->get();
-        $services = Service::all();
-        $projects = Portfolio::latest()->get();
+        // Load dynamic about/hero section data
+        $settings = Setting::first();
 
-        return view('home', compact('skills','services','projects'));
+        // Load dynamic sections
+        $skills    = Skill::orderBy('percentage', 'desc')->get();
+        $services  = Service::all();
+        $projects  = Portfolio::latest()->get();
+
+        // Return view with all data
+        return view('home', compact('settings', 'skills', 'services', 'projects'));
     }
 
     public function portfolio()
