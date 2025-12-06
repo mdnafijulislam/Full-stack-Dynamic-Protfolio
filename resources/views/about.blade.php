@@ -30,13 +30,13 @@
     <li>Coding</li>
     <li>Photography</li>
     <li>Gaming</li>
-  </ul>
+  </ul>s
 
   <hr>
 
   <h3 class="mb-3">Contact Information</h3>
   <p><strong>Address:</strong> Dhaka, Bangladesh</p>
-  <p><strong>Email:</strong> nafijul@example.com</p>
+  <p><strong>Email:</strong> nafijul@gmaill.com</p>
   <p><strong>Phone:</strong> +8801517819957</p>
 
 </div>
